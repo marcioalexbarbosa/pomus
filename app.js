@@ -2,12 +2,13 @@
   const $ = (s) => document.querySelector(s);
   const $$ = (s) => [...document.querySelectorAll(s)];
   const KEY = 'pomus.v1';
-  const DEF = { settings: { focus: 25, short: 5, long: 15, rounds: 4, auto: true, sound: true, tick: true, notify: true }, history: [], timer: null };
+  const DEF = { settings: { focus: 25, short: 5, long: 15, rounds: 4, auto: true, sound: true, tick: true, notify: false }, history: [], timer: null };
 
   let st;
   try { st = JSON.parse(localStorage.getItem(KEY)); } catch { st = null; }
   st = { ...DEF, ...(st || {}) };
   st.settings = { ...DEF.settings, ...st.settings };
+  if (!st.migN) { st.settings.notify = false; st.migN = true; }
   if (st.settings.long === 10 && !st.mig15) { st.settings.long = 15; st.mig15 = true; }
   const save = () => { try { localStorage.setItem(KEY, JSON.stringify(st)); } catch {} };
 
@@ -76,7 +77,6 @@
     show('home'); paintMini();
   }
   $('#start').onclick = () => {
-    if (st.settings.notify && 'Notification' in window && Notification.permission === 'default') Notification.requestPermission();
     begin('focus', st.settings.focus);
   };
   $('#pause').onclick = () => {

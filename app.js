@@ -208,6 +208,7 @@
   // ---- mini mode ----
   const FULL = [350, 550], MINI = [260, 84];
   function sizeWindow([w, h]) {
+    if (window.pomus) return window.pomus.resize(w, h);
     try { window.resizeTo(w + (outerWidth - innerWidth), h + (outerHeight - innerHeight)); } catch {}
   }
   function paintMini(left) {

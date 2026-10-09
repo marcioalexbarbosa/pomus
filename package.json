@@ -1,0 +1,15 @@
+{
+  "name": "pomus",
+  "productName": "Pomus",
+  "version": "1.0.0",
+  "description": "A Pomodoro timer in a vintage engraving style",
+  "main": "main.js",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "electron ."
+  },
+  "devDependencies": {
+    "electron": "44.7.0"
+  }
+}

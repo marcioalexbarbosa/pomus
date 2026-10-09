@@ -2,7 +2,7 @@
   const $ = (s) => document.querySelector(s);
   const $$ = (s) => [...document.querySelectorAll(s)];
   const KEY = 'pomus.v1';
-  const DEF = { settings: { focus: 25, short: 5, long: 15, rounds: 4, auto: true, sound: true, tick: true, notify: false }, history: [], timer: null };
+  const DEF = { settings: { focus: 25, short: 5, long: 15, rounds: 4, auto: false, sound: true, tick: true, notify: false }, history: [], timer: null };
 
   let st;
   try { st = JSON.parse(localStorage.getItem(KEY)); } catch { st = null; }

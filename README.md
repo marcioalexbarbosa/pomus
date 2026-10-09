@@ -4,7 +4,7 @@ A Pomodoro timer for the Linux desktop, in a vintage engraving style. Plain HTML
 
 ## Features
 - 25 min focus, 5 min break, 15 min long break every 4 tomatoes (all configurable)
-- Auto-start breaks, pause/resume/cancel
+- Optional auto-start breaks (off by default), pause/resume/cancel
 - Tick-tock and end-of-cycle alarm, with a mute toggle
 - Timeline and stats (last 7 days)
 - Tiny mini mode for the timer

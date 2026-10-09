@@ -23,6 +23,7 @@ button{font:inherit;letter-spacing:inherit;color:inherit;background:none;border:
 #home .s1{left:44%;top:8%}#home .s2{left:76%;top:14%;width:5%}#home .s3{left:84%;top:40%}
 .tree{width:11%}
 .t1{right:6%;bottom:12%}.t2{right:18%;bottom:9%;width:9%}
+.moon{width:15%;left:9%;bottom:11%}
 .watch{position:absolute;left:50%;top:24%;width:min(76%,44vh);aspect-ratio:200/220;transform:translateX(-50%)}
 .watch-bg{position:absolute;inset:0;width:100%}
 .crown{position:absolute;left:34%;top:30%;width:30%}

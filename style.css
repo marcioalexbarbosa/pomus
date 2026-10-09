@@ -46,6 +46,7 @@ button{font:inherit;letter-spacing:inherit;color:inherit;background:none;border:
 .red:hover{filter:brightness(1.25)}
 #focus .s1{left:35%;top:19%}#focus .s2{left:72%;top:23%;width:5%}#focus .s3{left:22%;top:53%}#focus .s4{left:80%;top:60%}#focus .s5{left:44%;top:75%;width:5%}
 .gramophone{width:26%;right:5%;bottom:12%;filter:invert(.92)}
+.dog{width:26%;left:5%;bottom:12%;filter:invert(.92)}
 #focus::after{content:"";position:absolute;left:0;right:0;bottom:0;height:12%;background:repeating-linear-gradient(0deg,var(--paper) 0 2px,transparent 2px 6px);mask:linear-gradient(0deg,#000,transparent);-webkit-mask:linear-gradient(0deg,#000,transparent);pointer-events:none}
 #focus.resting{background:#2f3a36}
 

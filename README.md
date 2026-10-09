@@ -22,7 +22,8 @@ A Pomodoro timer for the Linux desktop, in a vintage engraving style. Plain HTML
 
 On macOS (Chrome installed; no always-on-top):
 
-    ./pomus-mac.sh
+    ./install-mac.sh  # builds ~/Applications/Pomus.app and pins it to the Dock
+    ./pomus-mac.sh    # or launch directly
 
 To test quickly: Settings → Focus = 0.1 (6 seconds).
 
@@ -31,6 +32,7 @@ To test quickly: Settings → Focus = 0.1 (6 seconds).
 - `art/` — original SVG illustrations
 - `pomus.sh` — launcher (window size, always on top)
 - `pomus-mac.sh` — macOS launcher
+- `install-mac.sh` — builds `Pomus.app` for the macOS Dock
 - `install.sh` — creates the `.desktop` entry
 
 ## License

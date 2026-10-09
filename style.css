@@ -44,7 +44,7 @@ button{font:inherit;letter-spacing:inherit;color:inherit;background:none;border:
 .big{font-size:clamp(54px,18vw,92px);line-height:1;margin-bottom:6px}
 .red{color:var(--red);font-size:clamp(18px,5.5vw,26px);padding:8px 20px}
 .red:hover{filter:brightness(1.25)}
-#focus .s1{left:35%;top:19%}#focus .s2{left:63%;top:27%;width:5%}#focus .s3{left:22%;top:53%}#focus .s4{left:80%;top:60%}#focus .s5{left:44%;top:75%;width:5%}
+#focus .s1{left:35%;top:19%}#focus .s2{left:72%;top:23%;width:5%}#focus .s3{left:22%;top:53%}#focus .s4{left:80%;top:60%}#focus .s5{left:44%;top:75%;width:5%}
 .gramophone{width:26%;right:5%;bottom:12%;filter:invert(.92)}
 #focus::after{content:"";position:absolute;left:0;right:0;bottom:0;height:12%;background:repeating-linear-gradient(0deg,var(--paper) 0 2px,transparent 2px 6px);mask:linear-gradient(0deg,#000,transparent);-webkit-mask:linear-gradient(0deg,#000,transparent);pointer-events:none}
 #focus.resting{background:#2f3a36}
@@ -92,3 +92,5 @@ body.mini .view,body.mini #mute,body.mini #mini-btn{display:none!important}
 body.mini #mini{display:flex}
 body.mini.mini-dark #mini{background:var(--night);color:var(--paper)}
 body.mini.mini-rest #mini{background:#2f3a36}
+
+.card.suggest{background:var(--ink);color:var(--paper)}.card.suggest small::after{content:' · suggested'}

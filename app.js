@@ -19,10 +19,12 @@
   const dayKey = (t) => { const d = new Date(t); return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`; };
   const todayCount = () => st.history.filter((h) => dayKey(h.ts) === dayKey(Date.now())).length;
 
+  let suggested = null;
   function show(id) {
     $$('.view').forEach((v) => v.classList.toggle('active', v.id === id));
+    if (id !== 'rest') suggested = null;
     if (id === 'home') renderHome();
-    if (id === 'rest') { $('#rest-short').textContent = fmt(st.settings.short * 60000); $('#rest-long').textContent = fmt(st.settings.long * 60000); }
+    if (id === 'rest') { $$('[data-rest]').forEach((b) => b.classList.toggle('suggest', b.dataset.rest === suggested)); $('#rest-short').textContent = fmt(st.settings.short * 60000); $('#rest-long').textContent = fmt(st.settings.long * 60000); }
     if (id === 'timeline') renderTimeline();
     if (id === 'stats') renderStats();
     if (id === 'settings') loadSettings();
@@ -74,7 +76,9 @@
       const long = todayCount() % st.settings.rounds === 0;
       return begin(long ? 'long' : 'short', long ? st.settings.long : st.settings.short);
     }
-    show('home'); paintMini();
+    if (t.mode === 'focus') { suggested = todayCount() % st.settings.rounds === 0 ? 'long' : 'short'; show('rest'); }
+    else show('home');
+    paintMini();
   }
   $('#start').onclick = () => {
     begin('focus', st.settings.focus);
@@ -87,6 +91,7 @@
   };
   $('#cancel').onclick = () => { clearInterval(tick); st.timer = null; save(); show('home'); paintMini(); };
   $$('[data-rest]').forEach((b) => b.addEventListener('click', () => {
+    suggested = null;
     const long = b.dataset.rest === 'long';
     begin(long ? 'long' : 'short', long ? st.settings.long : st.settings.short);
   }));
@@ -201,7 +206,7 @@
   paintMute();
 
   // ---- mini mode ----
-  const FULL = [400, 680], MINI = [260, 84];
+  const FULL = [350, 550], MINI = [260, 84];
   function sizeWindow([w, h]) {
     try { window.resizeTo(w + (outerWidth - innerWidth), h + (outerHeight - innerHeight)); } catch {}
   }
